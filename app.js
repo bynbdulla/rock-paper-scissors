@@ -4,10 +4,13 @@ const rock = document.querySelector('#rock')
 const scissors = document.querySelector('#scissors')
 const paper = document.querySelector('#paper')
 const reset = document.querySelector('#reset')
-console.log(choices)
+const choicesArr = ['rock', 'paper' , 'scissors']
 
+
+// console.log(choices)
 /*-------- Variables --------------------------------*/
 let userChoice = null //it's empty so we can put null or ''
+let computerChoice = []
 
 /*--------- Cached Element References ------------------------*/
 
@@ -29,7 +32,13 @@ choices.addEventListener('click', function(event){
         rock.classList.add('hidden')
         paper.classList.add('hidden')
     }
-    // console.log('User Choice: ', userChoice)
+    
+    // computer add a choice
+    let randomIndex = Math.floor(Math.random() * 3)
+    computerChoice = choicesArr[randomIndex]  
+    
+    console.log('User Choice: ', userChoice)
+    console.log('computer Choice: ', computerChoice)
 })
 
 reset.addEventListener('click', function(){
